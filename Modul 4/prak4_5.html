@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link href="./smart_tab.min.css" rel="stylesheet" />
+    <style>
+      body {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <label>Theme:</label>
+      <select id="theme_selector">
+        <option value="default" selected>default</option>
+        <option value="classic">Classic</option>
+        <option value="dark">Dark</option>
+        <option value="brick">Brick</option>
+        <option value="round">Round</option>
+        <option value="pills">Pills</option>
+        <option value="github">GitHub</option>
+        <option value="sourceforge">SourceForge</option>
+        <option value="">No Theme</option>
+      </select>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="is_vertical" value="" />
+      <label for="is_vertical">Vertical</label>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="is_justified" value="1" checked />
+      <label for="is_justified">Justified</label>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Animation</label>
+      <select id="animation">
+        <option value="none">None</option>
+        <option value="fade">Fade</option>
+        <option value="slide-horizontal">Slide Horizontal</option>
+        <option value="slide-vertical">Slide Vertical</option>
+        <option value="slide-swing">Slide Swing</option>
+      </select>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Go To:</label>
+      <select id="go_to_tab">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </p>
+    <br />
+
+    <div id="smarttab">
+      <ul class="nav">
+        <li>
+          <a class="nav-link" href="#tab-1">
+            <strong>Teknik Informatika</strong>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#tab-2">
+            <strong>Sistem Informasi</strong>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#tab-3">
+            <strong>Desain Komunikasi Visual</strong>
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div id="tab-1" class="tab-pane" role="tabpanel">
+          <h3>Teknik Informatika (TI)</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque
+          officia ut sint exercitationem autem, nostrum recusandae, nemo
+          explicabo accusantium, quam consequatur hic quis ab eum quisquam
+          accusamus ratione. Voluptas, culpa nobis. Tenetur, a perferendis et
+          velit consequatur praesentium beatae? Sit vero eos veritatis nisi
+          temporibus in deserunt animi eaque.
+        </div>
+
+        <div id="tab-2" class="tab-pane" role="tabpanel">
+          <h3>Sistem Informasi (SI)</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque
+          officia ut sint exercitationem autem, nostrum recusandae, nemo
+          explicabo accusantium, quam consequatur hic quis ab eum quisquam
+          accusamus ratione. Voluptas, culpa nobis. Tenetur, a perferendis et
+          velit consequatur praesentium beatae? Sit vero eos veritatis nisi
+          temporibus in deserunt animi eaque.
+        </div>
+
+        <div id="tab-3" class="tab-pane" role="tabpanel">
+          <h3>Desain Komunikasi Visual (DKV)</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque
+          officia ut sint exercitationem autem, nostrum recusandae, nemo
+          explicabo accusantium, quam consequatur hic quis ab eum quisquam
+          accusamus ratione. Voluptas, culpa nobis. Tenetur, a perferendis et
+          velit consequatur praesentium beatae? Sit vero eos veritatis nisi
+          temporibus in deserunt animi eaque.
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="./jquery.smartTab.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#smarttab").smartTab();
+
+        $("#go_to_tab").on("chang e", function () {
+          var tab_indek = $(this).val() - 1;
+          $("#smarttab").smartTab("goToTab", tab_indek);
+          return true;
+        });
+
+        $("is_vertical").on("change", function () {
+          var options = {
+            orientation:
+              $(this).prop("checked") == true ? "vertical" : "horizontal",
+          };
+          $("#smarttab").smartTab("setOptions", options);
+          return true;
+        });
+
+        $("#is_justified").on("click", function () {
+          var options = {
+            justified: $(this).prop("checked"),
+          };
+          $("#smarttab").smartTab("setOptions", options);
+          return true;
+        });
+
+        $("animation").on("change", function () {
+          var options = {
+            transition: {
+              animation: $(this).val(),
+            },
+          };
+          $r("#smarttab").smartTab("setOptions", options);
+          return true;
+        });
+
+        $("#theme_selector").on("change", function () {
+          var options = {
+            theme: $(this).val(),
+          };
+          $("#smarttab").smartTab("setOptions", options);
+          return true;
+        });
+      });
+    </script>
+  </body>
+</html>

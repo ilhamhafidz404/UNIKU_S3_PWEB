@@ -1,0 +1,45 @@
+body {
+  background-color: #bbdcf2;
+}
+form {
+  background-color: #30a3f1;
+  width: 40%;
+  padding: 20px;
+  font-weight: bold;
+  margin: 150px 300px 0px;
+  border-radius: 20px;
+}
+h2 {
+  color: white;
+  padding-left: 200px;
+}
+input {
+  width: 100%;
+  padding: 15px;
+  margin: 4px;
+  box-sizing: border-box;
+  padding-left: 60px;
+}
+img {
+  position: absolute;
+  height: 30px;
+  left: 0;
+  top: 5px;
+  padding: 10px 10px;
+  background: rgb(9, 7, 103);
+}
+.Icon-inside {
+  position: relative;
+}
+button {
+  padding: 10px;
+  width: 100%;
+  margin: 3px;
+  color: white;
+}
+button[type="submit"] {
+  background-color: rgb(71, 175, 23);
+}
+button[type="reset"] {
+  background-color: rgb(164, 32, 47);
+}

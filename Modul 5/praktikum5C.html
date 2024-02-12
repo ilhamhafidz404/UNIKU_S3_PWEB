@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 5 Praktikum 5C</title>
+    <script language="javascript">
+      function tampil() {
+        a = parseInt(document.form1.bilangan.value);
+
+        if (a % 2 == 0) {
+          alert(a + " termasuk bilangan genap");
+        } else {
+          alert(a + " termasuk bilangan ganjil");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="form1">
+      Menentukan Jenis Bilangan <br />
+      Masukkan Bilangan : <input type="number" name="bilangan" />
+      <input type="button" onclick="tampil()" value="cek" />
+    </form>
+  </body>
+</html>

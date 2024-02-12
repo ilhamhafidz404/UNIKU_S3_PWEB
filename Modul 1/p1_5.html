@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="formInputMhs">
+		<table border="1" bgcolor="#EE686">
+			<tr>
+				<td colspan="2" align="center">INPUT DATA MAHASISWA</td>
+			</tr>
+			<tr>
+				<td>NIM</td>
+				<td>
+					<input type="number" name="nim" maxlength="11" size="25" required>
+				</td>
+			</tr>
+			<tr>
+				<td>Nama Lengkap</td>
+				<td>
+					<input type="text" name="nama" maxlength="11" size="25">
+				</td>
+			</tr>
+			<tr>
+				<td>Tampat Lahir</td>
+				<td>
+					<input type="text" name="tempat_lahir">
+				</td>
+			</tr>
+			<tr>
+				<td>Tanggal Lahir</td>
+				<td>
+					<input type="date" name="tgl_lahir">
+				</td>
+			</tr>
+			<tr>
+				<td>Jenis Kelamin</td>
+				<td>
+					<input type="radio" name="jk" value="L" checked> Laki-laki
+					<input type="radio" name="jk" value="P"> Perempuan
+				</td>
+			</tr>
+			<tr>
+				<td>Alamat</td>
+				<td>
+					<textarea name="alamat" cols="24" rows="5"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Nomor Telepon</td>
+				<td>
+					<input type="telp" name="telp" maxlength="13" size="25">
+				</td>
+			</tr>
+			<tr>
+				<td>E-Mail</td>
+				<td>
+					<input type="email" name="e_mail">
+				</td>
+			</tr>
+			<tr>
+				<td>Program Studi</td>
+				<td>
+					<select name="prodi">
+						<option value="TI-S1" selected>Teknik Informatika - S1</option>
+						<option value="SI-S1">Sistem Informasi - S1</option>
+						<option value="DKV-S1">Desain Komunikasi Visual - S1</option>
+						<option value="Sipil-S1">Teknik Sipil - S1</option>
+						<option value="MI-D3">Manajemen Informatika - D3</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Foto</td>
+				<td>
+					<input type="file" name="foto">
+				</td>
+			</tr>
+			<tr>
+				<td>Dengan ini menyatakan :</td>
+				<td>
+					<input type="checkbox" name="syarat" value="1" required> Semua data adalah benar <br>
+					<input type="checkbox" name="syarat" value="2" required> Bersedia mematuhi semua peraturan yang berlaku <br>
+					<input type="checkbox" name="syarat" value="3" required> Bersedia menerima sanksi jika melanggar peraturan yang berlaku<br>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button type="submit">Simpan</button>
+					<button type="reset">Batal</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

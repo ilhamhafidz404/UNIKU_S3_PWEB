@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="p2_6.css" />
+  </head>
+  <body>
+    <form action="action_submit.php" name="form1" id="form1">
+      <fieldset>
+        <legend>Pendafatran Mahasiswa Baru</legend>
+        <h2 class="headingstyle">Formulir Pendaftaran</h2>
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" />
+        <br /><br />
+        <label for="mailid">Email</label>
+        <input type="email" id="mailid" name="mailid" />
+        <br /><br />
+        <label for="tgl">Tanggal Pendaftaran</label>
+        <input type="date" name="tgl" />
+        <br /><br />
+        <label for="prodi">Program Studi</label>
+        <select id="prodi" name="prog_studi">
+          <option value="TI-S1">Teknik Informatika - S1</option>
+          <option value="SI-S1">Sitem Informasi - S1</option>
+          <option value="MI-D3">Manajemen Informatika - D3</option>
+          <option value="DKV-S1">Desain Komunikasi Visual - S1</option>
+          <option value="TS-S1">Teknik SIpil - S1</option>
+        </select>
+        <br />
+        <button type="submit">KIRIM</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

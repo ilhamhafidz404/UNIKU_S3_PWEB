@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh JQuery</title>
+    <script src="./jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".fadeout").click(function () {
+          $("img").fadeOut();
+        });
+        $(".fadein").click(function () {
+          $("img").fadeIn();
+        });
+        $(".fadetoggle").click(function () {
+          $("img").fadeToggle();
+        });
+        $(".fadeto").click(function () {
+          $("img").fadeTo("slow", 0.5);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button class="fadeout" style="background-color: #add8e6">Fade Out</button>
+    <button class="fadein" style="background-color: #7cfc00">Fade In</button>
+    <button class="fadetoggle" style="background-color: #ffa07a">
+      Fade Toggle
+    </button>
+    <button class="fadeto" style="background-color: #ffe4b5">Fade To</button>
+    <br />
+    <br />
+    <img src="./fkom.png" width="250" />
+  </body>
+</html>

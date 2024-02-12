@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 5 Praktikum 5</title>
+    <script language="javascript">
+      function tampil() {
+        a = document.form1.bil_1.value;
+        b = document.form1.bil_2.value;
+        c = a + b;
+        document.form1.hasil.value = c;
+      }
+    </script>
+  </head>
+  <body>
+    <form name="form1">
+      Bilangan 1 <input type="number" name="bil_1" /> <br />
+      + <br />
+      Bilangan 2 <input type="number" name="bil_2" /> <br />
+      <input type="button" onclick="tampil()" value="=" />
+      <br />
+      Hasil <input type="text" name="hasil" id="HASIL" /> <br />
+    </form>
+  </body>
+</html>

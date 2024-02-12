@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const hit = () => {
+        const golongan = form1.gol.value;
+        const gapokMap = { I: 250000, II: 300000, III: 350000 };
+
+        const gapok = gapokMap[golongan];
+        const tunjangan =
+          parseInt(form1.anak.value) *
+          gapok *
+          (golongan === "I" ? 0.05 : golongan === "II" ? 0.01 : 0.15);
+        const gaji = gapok + tunjangan;
+
+        form1.gapok.value = gapok.toLocaleString("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
+        form1.tunjangan.value = tunjangan.toLocaleString("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
+        form1.gaji.value = gaji.toLocaleString("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div
+      style="
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <form action="" name="form1">
+        <table border="1">
+          <tr>
+            <th colspan="2">PERHITUNGAN GAJI</th>
+          </tr>
+          <tr>
+            <td>Golongan</td>
+            <td>
+              <select name="gol">
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Jumlah Anak</td>
+            <td>
+              <input type="text" name="anak" size="10" maxlength="10" />
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">
+              <input
+                type="button"
+                name="hitung"
+                value="Hitung"
+                onclick="hit()"
+              />
+              <input type="reset" name="batal" value="Cancel" />
+            </th>
+          </tr>
+          <tr>
+            <td>Gaji Pokok</td>
+            <td>
+              <input type="text" name="gapok" readonly />
+            </td>
+          </tr>
+          <tr>
+            <td>Tunjangan</td>
+            <td>
+              <input type="text" name="tunjangan" readonly />
+            </td>
+          </tr>
+          <tr>
+            <td>Gaji Bersih</td>
+            <td>
+              <input type="text" name="gaji" readonly />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

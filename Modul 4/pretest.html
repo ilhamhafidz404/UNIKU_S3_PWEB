@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh JQuery</title>
+    <script src="./jquery.js"></script>
+    <style>
+      button {
+        background-color: #0a4d8f;
+        padding: 10px 30px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        opacity: 0.7;
+      }
+      img {
+        transition: 0.5s;
+        transition-timing-function: cubic-bezier(0, 0.7, 1, 1.65);
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+      }
+      img.show {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("#toggleButton").click(() => {
+          $("img").hasClass("show")
+            ? ($("img").removeClass("show"), $("#toggleButton").text("Show"))
+            : ($("img").addClass("show"), $("#toggleButton").text("Hide"));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <img src="./fkom.png" width="200" />
+      <br /><br />
+      <button id="toggleButton">Show</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Cube</title>
+    <script src="./jquery.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      html,
+      body,
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .cube {
+        width: 360px;
+        height: 360px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(-20deg) rotateY(-45deg);
+        top: 50%;
+        left: 50%;
+        margin-left: -180px;
+        margin-top: -180px;
+      }
+
+      .cube div {
+        width: 360px;
+        height: 360px;
+        position: absolute;
+        background: rgba(34, 34, 34, 0.6);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        line-height: 360px;
+        text-align: center;
+        color: #fff;
+        font-family: arial;
+        font-size: 40px;
+      }
+
+      .cube div.top {
+        transform: rotateX(90deg);
+        margin-top: -180px;
+      }
+
+      .cube div.right {
+        transform: rotateY(90deg);
+        margin-left: 180px;
+      }
+
+      .cube div.bottom {
+        transform: rotateX(-90deg);
+        margin-top: 180px;
+      }
+
+      .cube div.left {
+        transform: rotateY(-90deg);
+        margin-left: -180px;
+      }
+
+      .cube div.front {
+        transform: translateZ(180px);
+      }
+
+      .cube div.back {
+        transform: rotateY(180deg) translateZ(180px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cube">
+        <div class="top"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="back"></div>
+        <div class="front"></div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(() => {
+        $(window).mousedown(() => {
+          $(window).mousemove((e) => {
+            $(".cube").css(
+              "transform",
+              "rotateX(" + -e.pageY + "deg)" + "rotateY(" + e.pageX + "deg)"
+            );
+          });
+
+          $(window).mouseup(() => {
+            $(this).off("mousemove");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

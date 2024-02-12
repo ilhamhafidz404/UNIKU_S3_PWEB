@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-image: url(./bg2.webp);
+        background-size: cover;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .card {
+        border-bottom: 7px solid #f4f09a;
+        border-top: 7px solid #f4f09a;
+      }
+      h1 {
+        color: #f4f09a;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="position-absolute top-50 start-50 translate-middle"
+      style="z-index: 1000"
+    >
+      <div class="d-flex align-items-center justify-content-center mb-5">
+        <img src="./Uniku.png" width="100" />
+        <div class="ms-3">
+          <h1 class="fw-bold">FORM BUKU</h1>
+        </div>
+      </div>
+      <div class="card p-4" style="width: 700px">
+        <form action="">
+          <div class="mb-3">
+            <label for="kodeBuku" class="form-label">Kode Buku</label>
+            <input type="text" class="form-control" id="kodeBuku" />
+          </div>
+          <div class="mb-3">
+            <label for="pengarang" class="form-label">Pengarang</label>
+            <input type="text" class="form-control" id="pengarang" />
+          </div>
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label for="penerbit" class="form-label">Penerbit</label>
+              <input type="text" class="form-control" id="penerbit" />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="tahunTerbit" class="form-label">Penerbit</label>
+              <select class="form-select" id="tahunTerbit">
+                <option selected>-Pilih Tahun-</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-4">
+              <label for="stok" class="form-label">Stok</label>
+              <input type="text" class="form-control" id="stok" />
+            </div>
+            <div class="mb-3 col-4">
+              <label for="jumlahTersedia" class="form-label"
+                >Jumlah Tersedia</label
+              >
+              <input type="text" class="form-control" id="jumlahTersedia" />
+            </div>
+            <div class="mb-3 col-4">
+              <label for="jumlahTerpinjam" class="form-label"
+                >Jumlah Terpinjam</label
+              >
+              <input type="text" class="form-control" id="jumlahTerpinjam" />
+            </div>
+          </div>
+          <div class="text-end mt-4">
+            <button class="btn btn-danger">Reset</button>
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

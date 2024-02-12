@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/geometric-leaves.png");
+      }
+      .flex {
+        display: inline-flex;
+        gap: 15px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        padding: 20px 0 20px 20px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-bottom: 5px solid lightskyblue;
+        z-index: 10000000;
+      }
+      img {
+        width: 300px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      h2 {
+        font-size: 25px;
+        text-transform: uppercase;
+        padding: 5px 20px;
+        margin-bottom: 0;
+      }
+      p {
+        width: 500px;
+        padding: 5px 40px 5px 20px;
+        color: #333;
+        background-color: white;
+      }
+      .flex div:nth-child(2) {
+        position: relative;
+      }
+      a {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-right: 40px;
+      }
+      hr {
+        border-color: lightskyblue;
+      }
+
+      ul {
+        position: absolute;
+        right: -170px;
+        list-style: none;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -100;
+      }
+      ul li {
+        width: 150px;
+        height: 30px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        transform: translateX(-120px);
+        transition: 0.5s;
+      }
+      ul li i {
+        margin-right: 10px;
+      }
+      ul li:hover {
+        transform: translateX(-0px);
+      }
+
+      ul li.instagram {
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+      }
+      ul li.facebook {
+        background: #4867aa;
+      }
+      ul li.twitter {
+        background: #1da1f2;
+      }
+
+      p.hidden {
+        display: none;
+      }
+
+      p#showMore:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div>
+        <img src="./baeSuzy.webp" />
+      </div>
+      <div>
+        <h2>BAE SUZY</h2>
+        <hr />
+        <p>
+          Pada tahun 2009, dia mengikuti audisi Superstar K Mnet dan berhasil
+          melewati babak penyisihan tetapi ia akhirnya harus tereliminasi.
+          Namun, dia menarik perhatian dari JYP Entertainment dan segera menjadi
+          peserta pelatihan. Setelah menjalani pelatihan selama satu tahun, dia
+          berpasangan dengan sesama anggota Fei dan Jia, dan dipersiapkan untuk
+          debut di Tiongkok. Dengan penambahan Min secara mendadak ke dalam
+          kelompok, mereka berempat siap untuk debut sebagai Miss A. Ketika
+          debut Suzy bahkan di juluki The Most Legendary Visual Debut.
+          <br /><br />
+          Pada Oktober 2010, Suzy menjadi pembawa acara tetap untuk MBC Show!
+          Music Core bersama Minho dan Onew, keduanya anggota grup Shinee serta
+          Jiyeon dari T-ara. Suzy kemudian menjadi pembawa acara lain seperti
+          Seoul Music Awards Golden Disc Awards dan Mnet 20's Choice Awards""
+        </p>
+        <p id="showMore" class="hidden">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          vel suscipit quas magnam, iusto quae mollitia, error deserunt officia
+          consectetur consequatur eum et cum minus voluptatum adipisci hic est
+          ea.
+        </p>
+        <br /><br />
+        <a onclick="showContent()" target="_blank" id="readMore">
+          Baca Selengkapnya
+        </a>
+        <!-- <a href="#showMore" style="margin-right: 200px">
+          Baca Selengkapnya CSS
+        </a> -->
+
+        <ul>
+          <li class="instagram">
+            Instagram
+            <i class="fa-brands fa-instagram"></i>
+          </li>
+          <li class="facebook">
+            Facebook
+            <i class="fa-brands fa-facebook-f"></i>
+          </li>
+          <li class="twitter">
+            Twitter
+            <i class="fa-brands fa-twitter"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/4b990370bb.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const showContent = () => {
+        const hidden = document.querySelector("#showMore");
+        const readMore = document.querySelector("#readMore");
+
+        if (hidden.classList.contains("hidden")) {
+          readMore.innerHTML = "Baca lebih sedikit";
+          hidden.classList.toggle("hidden");
+        } else {
+          readMore.innerHTML = "Baca Selengkapnya";
+          hidden.classList.toggle("hidden");
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        border-color: red;
+      }
+      .success {
+        border-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="form">
+      <div>
+        <label for="email">Email</label> <br />
+        <input type="email" placeholder="Email" name="email" id="email" />
+      </div>
+      <br />
+      <div>
+        <label for="password">Password</label> <br />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password"
+        />
+      </div>
+      <br />
+      <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+
+      const reset = () => {
+        email.classList.remove("error");
+        password.classList.remove("error");
+        email.classList.remove("success");
+        password.classList.remove("success");
+      };
+
+      const validateForm = () => {
+        reset();
+
+        if (email.value && password.value) {
+          return alert("Login");
+        }
+
+        !email.value
+          ? email.classList.add("error")
+          : email.classList.add("success");
+
+        !password.value
+          ? password.classList.add("error")
+          : password.classList.add("success");
+      };
+    </script>
+  </body>
+</html>

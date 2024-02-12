@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh JQuery</title>
+    <script src="./jquery.js"></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.min.css" />
+    <script>
+      $(document).ready(function () {
+        $("#utama").accordion({
+          animated: "easeOutBounce",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="utama">
+      <h2>
+        <a href="">Teknik Informatika</a>
+      </h2>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil,
+        aliquam? Alias tenetur rem, consectetur eligendi sunt, odio, blanditiis
+        fugit praesentium pariatur nemo ducimus quasi repellendus. Asperiores
+        voluptate obcaecati quidem aliquid.
+      </div>
+      <h2>
+        <a href="">Sistem Informasi</a>
+      </h2>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil,
+        aliquam? Alias tenetur rem, consectetur eligendi sunt, odio, blanditiis
+        fugit praesentium pariatur nemo ducimus quasi repellendus. Asperiores
+        voluptate obcaecati quidem aliquid.
+      </div>
+    </div>
+  </body>
+</html>

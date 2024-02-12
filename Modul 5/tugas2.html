@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tugas 3</title>
+  </head>
+  <body>
+    <form action="" name="form1">
+      <table border="1">
+        <tr>
+          <th colspan="2">BIODATA MAHASISWA FKOM UNIKU </td>
+        </tr>
+        <tr>
+          <td>NIM</td>
+          <td>
+            <input type="number" name="nim" id="nim" placeholder="masukan nim anda">
+          </td>
+        </tr>
+        <tr>
+          <td>NAMA</td>
+          <td>
+            <input type="text" name="nama" placeholder="masukan nama anda">
+          </td>
+        </tr>
+        <tr>
+          <td>JENIS KELAMIN</td>
+          <td>
+            <input type="radio" name="jk" value="L">
+            <label for="">Laki-laki</label>
+            <input type="radio" name="jk" value="P">
+            <label for="">Perempuan</label>
+          </td>
+        </tr>
+        <tr>
+          <td>JENJANG</td>
+          <td>
+            <select name="jenjang" id="">
+              <option value="">--pilih salah satu--</option>
+              <option value="S1">S1</option>
+              <option value="D3">D3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>PROGRAM STUDI</td>
+          <td>
+            <select name="prodi" id="">
+              <option value="">--pilih salah satu--</option>
+              <option value="TI">Teknik Informatika</option>
+              <option value="SI">Sistem Informasi</option>
+              <option value="DKV">Desain Komunikasi Visual</option>
+              <option value="MI">Manajemen Informatika</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>KARIR YANG DIINGINKAN</td>
+          <td>
+            <input type="checkbox" name="karir1" value="programmer">
+            <label for="">Programmer</label>
+            <input type="checkbox" name="karir2" value="Web Desaigner">
+            <label for="">Web Desaigner</label>
+            <input type="checkbox" name="karir3" value="Software Developer">
+            <label for="">Software Developer</label>
+            <br>
+            <input type="checkbox" name="karir4" value="Network Administrator">
+            <label for="">Network Administrator</label>
+            <input type="checkbox" name="karir5" value="Operator">
+            <label for="">Operator</label>
+            <input type="checkbox" name="karir6" value="Analyst System">
+            <label for="">Analyst System</label>
+            <br>
+            <input type="checkbox" name="karir7" value="Animator">
+            <label for="">Animator</label>
+            <input type="checkbox" name="karir8" value="Game Developer">
+            <label for="">Game Developer</label>
+          </td>
+        </tr>
+        <tr>
+          <td>ALAMAT</td>
+          <td>
+            <textarea name="alamat"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>E-Mail</td>
+          <td>
+            <input type="email" name="email" placeholder="masukan e-mail @uniku">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="button" name="simpan" value="SIMPAN" id="simpan">
+            <input type="reset" name="batal" value="BATAL">
+          </td>
+        </tr>
+      </table>
+    </form>
+
+
+   <script>
+        const validateForm = () => {
+          const { nim, nama, jk, jenjang, prodi, alamat, email } = document.forms["form1"];
+
+          if (![nim.value, nama.value, jk.value, jenjang.value, prodi.value, alamat.value, email.value].every(Boolean) || !karirSelected()) {
+            alert("Isi semua inputan");
+          } else {
+            alert("Anda berhasil mendaftar");
+          }
+        };
+        
+        const karirSelected = () => {
+          const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+          return Array.from(checkboxes).some((checkbox) => checkbox.checked);
+        };
+
+        const simpanButton = document.getElementById("simpan");
+        if (simpanButton) {
+          simpanButton.addEventListener("click", validateForm);
+        }
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("click", updateKarir);
+        });
+    </script>
+  </body>
+</html>

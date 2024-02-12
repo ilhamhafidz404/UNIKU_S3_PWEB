@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./tugas.css" />
+    <style>
+      .formGroup {
+        position: relative;
+      }
+      label {
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
+      .formGroup label {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        left: 10px;
+        background-color: white;
+        padding: 0 5px;
+        font-weight: bold;
+      }
+      .formGroup input {
+        padding: 10px 5px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        width: 100%;
+      }
+      .formGroup select {
+        padding: 10px 5px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        width: 100%;
+        background-color: white;
+      }
+      .formGroup textarea {
+        padding: 10px 5px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        width: 100%;
+        background-color: white;
+      }
+
+      .formGroup#buku {
+        grid-area: buku;
+      }
+      .formGroup#pengarang {
+        grid-area: pengarang;
+      }
+      .formGroup#penerbit {
+        grid-area: penerbit;
+      }
+      .formGroup#stok {
+        grid-area: stok;
+      }
+      .formGroup#tahunTerbit {
+        grid-area: tahunTerbit;
+      }
+      .formGroup#tersedia {
+        grid-area: tersedia;
+      }
+      .formGroup#jk {
+        grid-area: jk;
+      }
+      .formGroup#alamat {
+        grid-area: alamat;
+      }
+
+      section.gridContainer {
+        display: grid;
+        grid-template-areas:
+          "buku pengarang penerbit"
+          "stok tahunTerbit tersedia"
+          "jk jk jk"
+          "alamat alamat alamat";
+        gap: 40px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="./Uniku.png" alt="" />
+      </div>
+      <div>
+        <h1>PERPUSTAKAAN FAKULTAS ILMU KOMPUTER UNIVERSITAS KUNINGAN</h1>
+        <p>
+          Jl Cut Nyak Dhien N0 36 A, Cijoho, Kecamatan Kuningan, Cijoho, Kec.
+          Kuningan, Kabupaten Kuningan, Jawa Barat 45513
+        </p>
+      </div>
+    </header>
+    <div class="visi">
+      <p>
+        Menjadi Universitas Unggul yang Memiliki Komitmen Tinggi terhadap
+        Pemberdayaan Masyarakat pada Tahun 2035
+      </p>
+    </div>
+    <main>
+      <nav>
+        <h3>MENU</h3>
+        <ul>
+          <li>
+            <a href="./tugas.html">
+              <i class="fa-solid fa-user"></i>
+              Data Anggota
+            </a>
+          </li>
+          <li>
+            <a href="./tugasFormAnggota.html">
+              <i class="fa-solid fa-user-plus"></i>
+              Form Anggota
+            </a>
+          </li>
+          <li>
+            <a href="./tugasDataBuku.html">
+              <i class="fa-solid fa-book"></i>
+              Data Buku
+            </a>
+          </li>
+          <li class="active">
+            <a href="./tugasFormBuku.html">
+              <i class="fa-solid fa-book-medical"></i>
+              Form Buku
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <aside style="margin-bottom: 50px">
+        <h1>Tambah Data Buku</h1>
+        <form action="">
+          <section class="gridContainer">
+            <div id="buku" class="formGroup">
+              <label for="">Buku</label>
+              <input type="text" />
+            </div>
+            <div id="pengarang" class="formGroup">
+              <label for="">Pengarang</label>
+              <input type="text" />
+            </div>
+            <div id="penerbit" class="formGroup">
+              <label for="">Penerbit</label>
+              <input type="text" />
+            </div>
+            <div id="tahunTerbit" class="formGroup">
+              <label for="">Tahun Terbit</label>
+              <input type="text" />
+            </div>
+            <div id="stok" class="formGroup">
+              <label for="">Stok</label>
+              <input type="number" />
+            </div>
+            <div id="tersedia" class="formGroup">
+              <label for="">Jumlah tersedia</label>
+              <input type="number" />
+            </div>
+            <div id="terpinjam" class="formGroup">
+              <label for="">Jumlah Terpinjam</label>
+              <input type="number" />
+            </div>
+            <div id="kode" class="formGroup">
+              <label for="">Kode Buku</label>
+              <input type="text" />
+            </div>
+            <div id="status" class="formGroup">
+              <label for="">Status</label>
+              <select name="" id="">
+                <option value="" selected hidden>Pilih Status</option>
+                <option value="T">Tersedia</option>
+                <option value="TT">Tidak Tersedia</option>
+              </select>
+            </div>
+          </section>
+        </form>
+      </aside>
+    </main>
+    <footer>
+      <p>copyright &copy; by Ilham Hafidz</p>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/4b990370bb.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

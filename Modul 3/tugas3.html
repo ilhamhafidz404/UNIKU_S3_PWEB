@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-image: url(./bg2.webp);
+        background-size: cover;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .card {
+        border-bottom: 7px solid #f4f09a;
+        border-top: 7px solid #f4f09a;
+      }
+      h1 {
+        color: #f4f09a;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      class="position-absolute top-50 start-50 translate-middle"
+      style="z-index: 1000"
+    >
+      <div class="d-flex align-items-center justify-content-center mb-5">
+        <div class="ms-3 text-center">
+          <img src="./Uniku.png" width="100" />
+          <h1 class="fw-bold">FORM ANGGOTA PERPUSTAKAAN</h1>
+        </div>
+      </div>
+      <div class="card p-4" style="width: 700px">
+        <form action="">
+          <div class="mb-3">
+            <label for="kodeAnggota" class="form-label">Kode Anggota</label>
+            <input type="text" class="form-control" id="kodeAnggota" />
+          </div>
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="nim" class="form-label">NIM</label>
+              <input type="text" class="form-control" id="nim" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label for="kelas" class="form-label">Kelas</label>
+              <input type="text" class="form-control" id="kelas" />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="prodi" class="form-label">Prodi</label>
+              <select class="form-select" id="prodi">
+                <option selected>-Pilih Prodi-</option>
+                <option value="TI">Teknik Informatika</option>
+                <option value="SI">Sistem Informasi</option>
+                <option value="DKV">Desain Komunikasi Visual</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">No Telp</label>
+            <input class="form-control" type="number" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Alamat</label>
+            <textarea class="form-control" rows="5"></textarea>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-6">
+              <label class="form-label">Foto</label>
+              <input class="form-control" type="file" />
+            </div>
+            <div class="mb-3 col-6">
+              <label class="form-label">Jenis Kelamin</label>
+              <br />
+              <input type="radio" class="form-check-input" id="L" name="jk" />
+              <label for="L">Laki-laki</label>
+              <input type="radio" class="form-check-input" id="P" name="jk" />
+              <label for="P">Perempuan</label>
+            </div>
+          </div>
+          <div class="text-end mt-4">
+            <button class="btn btn-danger">Reset</button>
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

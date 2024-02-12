@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <style></style>
+    <script>
+      $(document).ready(function () {
+        $(".tombol_2").hide();
+        $(".tombol_1").click(function () {
+          $("#text").hide("slow");
+          $(".tombol_2").show();
+          $(".tombol_1").hide();
+        });
+        $(".tombol_2").click(function () {
+          $("#text").show("slow");
+          $(".tombol_2").hide();
+          $(".tombol_1").show();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="text">Teknik Informatika</div>
+    <button class="tombol_1">Sembunyikan</button>
+    <button class="tombol_2">Tampilkan</button>
+  </body>
+</html>

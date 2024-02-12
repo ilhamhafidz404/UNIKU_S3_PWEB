@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let nama, nim, kelas;
+
+      const showBiodata = () => {
+        nama = document.querySelector("input#nama").value;
+        nim = document.querySelector("input#nim").value;
+        kelas = document.querySelector("select#kelas").value;
+
+        alert(`Halo selamat datang ${nama}`);
+
+        document.querySelector("p#nama").innerHTML = `Halo ${nama}`;
+        document.querySelector("p#nim").innerHTML = `NIM : ${nim}`;
+        document.querySelector("p#kelas").innerHTML = `Kelas ${kelas}`;
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Masukkan Nama" id="nama" />
+      <br /><br />
+      <input type="text" placeholder="Masukkan NIM" id="nim" />
+      <br /><br />
+      <select id="kelas">
+        <option value="" disabled selected>-pilih kelas-</option>
+        <option value="TINFC-2022-01">TINFC-2022-01</option>
+        <option value="TINFC-2022-02">TINFC-2022-02</option>
+        <option value="TINFC-2022-03">TINFC-2022-03</option>
+        <option value="TINFC-2022-04">TINFC-2022-04</option>
+      </select>
+      <br /><br />
+      <button onclick="showBiodata()">Submit</button>
+
+      <p id="nama"></p>
+      <p id="nim"></p>
+      <p id="kelas"></p>
+    </div>
+  </body>
+</html>

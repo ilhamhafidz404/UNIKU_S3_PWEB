@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./bg.jpg);
+  background-size: cover;
+  height: 300px;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+header::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+}
+header img {
+  width: 100px;
+  position: relative;
+  z-index: 10;
+}
+header h1 {
+  margin-left: 20px;
+}
+header div:nth-child(2) {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+div.visi {
+  background-color: #f5f19b;
+  text-align: center;
+  padding: 20px;
+}
+main {
+  display: flex;
+  gap: 50px;
+  padding-right: 50px;
+}
+/* main nav,
+main aside {
+  width: 50%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+main nav {
+  width: 400px;
+  padding-top: 20px;
+  background-color: #f7f6f6;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+main nav h3 {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+main nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+main nav ul li {
+  border-left: 5px solid transparent;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+main nav ul li.active {
+  border-left: 5px solid #f2ea5b;
+  background-color: #333;
+}
+main nav ul li.active a {
+  color: #f2ea5b;
+}
+main nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+main nav ul li a i {
+  width: 30px;
+}
+
+main aside {
+  width: 100%;
+}
+main aside h1 {
+  margin: 20px 0;
+}
+main aside table {
+  width: 100%;
+}
+main aside table tbody tr:nth-child(even) {
+  background-color: #eaeaea;
+}
+main aside table thead tr td {
+  padding: 20px 0;
+}
+main aside table tbody tr td {
+  padding: 20px 0;
+}
+main aside table tbody tr td img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        padding: 50px 0;
+        padding-top: 150px;
+        background-image: url(https://uniku.ac.id/wp-content/uploads/2020/06/DJI_0027-scaled-1.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      header div {
+        z-index: 10;
+      }
+      nav {
+        background-color: #feff67;
+        padding: 0 20px;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        right: 0;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+      }
+      nav ul li {
+        padding: 20px;
+        position: relative;
+      }
+      nav ul li:hover {
+        background-color: #e9de0e;
+      }
+      nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+        text-transform: uppercase;
+      }
+      nav ul li ol{
+        position: absolute;
+        list-style: none;
+        display: none;
+        background-color: #feff67;
+        bottom: -200%;
+        left: 0;
+        z-index: 100;
+      }
+      nav ul li ol.active{
+        display: block;
+      }
+      nav ul li ol li{
+        padding: 10px 20px;
+        margin: 0;
+      }
+
+      main{
+        margin-top: 20px;
+        padding: 10px 50px;
+        gap: 20px;
+      }
+      main img{
+        width: 400px;
+      }
+      main hr{
+        color: white;
+        border-bottom: 5px solid #ffce3e;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="d-flex justify-content-between px-5 align-items-center">
+      <div>
+        <h4 class="fw-bold">UNIKU</h4>
+      </div>
+      <ul class="mb-0">
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li class="tentang">
+          <a href="">Tentang</a>
+          <ol class="m-0 p-0">
+            <li>
+              <a href="">Indentitas</a>
+            </li>
+            <li>
+              <a href="">Visi Misi</a>
+            </li>
+          </li>
+          <li>
+            <a href="">Sejarah</a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="">BERITA</a>
+      </li>
+      </ul>
+    </nav>
+    <header class="text-center position-relative">
+      <div class="position-relative text-white">
+        <img src="https://upload.wikimedia.org/wikipedia/id/e/ec/Logo_Universitas_Kuningan.png" width="100" />
+        <h1>UNIVERSITAS KUNINGAN</h1>
+        <p>Jl. Cut Nyak Dhien No.36A, Cijoho, Kec. Kuningan, Kabupaten Kuningan, Jawa Barat 45513</p>
+      </div>
+    </header>
+    <main>
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="fw-bold">BERITA TERBARU UNIVERSITAS KUNINGAN</h5>
+        <hr width="1000">
+      </div>
+      <section class="row mt-3">
+        <div class="col-4">
+          <img src="https://uniku.ac.id/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-08-at-14.13.10.jpeg" class="w-100 rounded" style="height: 250px; object-fit: cover;">
+          <h5 class="mt-2">
+            HIMPUNAN MAHASISWA AKUNTANSI FEB GELAR KEGIATAN ACTIVATION 2023
+          </h5>
+          <a href="" class="text-warning">Read More</a>
+          <p class="text-sm">Universitas Kuningan | 8 November, 2023</p>
+        </div>
+        <div class="col-4">
+          <img src="https://uniku.ac.id/wp-content/uploads/2023/11/Screenshot-110.png" class="w-100 rounded" style="height: 250px; object-fit: cover;">
+          <h5 class="mt-2">
+            Siap Terima Mahasiswa Baru, Uniku Launching PMB TA 2024/2025
+          </h5>
+          <a href="" class="text-warning">Read More</a>
+          <p class="text-sm">Universitas Kuningan | 8 November, 2023</p>
+        </div>
+        <div class="col-4">
+          <img src="https://uniku.ac.id/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-07-at-12.56.14.jpeg" class="w-100 rounded" style="height: 250px; object-fit: cover;">
+          <h5 class="mt-2">
+            Acara Lomba Cerdas Cermat Tim PPK ORMAWA di Desa Karoya
+          </h5>
+          <a href="" class="text-warning">Read More</a>
+          <p class="text-sm">Universitas Kuningan | 8 November, 2023</p>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center text-white bg-dark py-4 mt-5">
+      Copyright &copy; by Universitas Kuningan
+    </footer>
+
+    <script src="./jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("nav ul li.tentang").hover(
+          function () {
+            $("nav ul li ol").addClass("active");
+          },
+          function () {
+            $("nav ul li ol").removeClass("active");
+          }
+        );
+
+        $("main img").hover(
+          function(){
+            $(this).css({
+              "opacity": "0.5",
+              "cursor" : "pointer"
+            })
+          },
+          function(){
+            $(this).css("opacity", "1")
+          }
+        )
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
+
